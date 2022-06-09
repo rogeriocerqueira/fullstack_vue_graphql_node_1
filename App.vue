@@ -20,9 +20,13 @@
                    </li>
                </ul>
                <br/>
-               <input class = "form-control" type = "text" placeholder="Digite o prefixo"/> 
+               <div class = "input-group">
+               <input class = "form-control" type = "text" placeholder="Digite o prefixo"/>
+               <div class="input-group-controle">
+                 <button class="btn btn-info"><span class="fa fa-plus"></span></button>
+               </div>
              </div>
-
+             </div>
            </div>
         </div>
         <div class = "col-md">
@@ -30,12 +34,17 @@
           <div class = "card">
              <div class="card-body"> 
                <ul class = "list-group">
-                 <li class = "list-group-item" v-for = " sufix in sufixes" v-bind:key="sufix">
+                 <li class = "list-group-item" v-for = "sufix in sufixes" v-bind:key="sufix">
                       {{ sufix }}
                    </li>
                </ul>
                <br/>
-               <input class = "form-control" type = "text" placeholder="Digite o sufixo"/> 
+               <div class = "input-group">
+               <input class = "form-control" type = "text" placeholder="Digite o Sufixo"/>
+               <div class="input-group-controle">
+                 <button class="btn btn-info"><span class="fa fa-plus"></span></button>
+               </div>
+             </div>
              </div>             
            </div>
         </div>
@@ -48,7 +57,7 @@
           <div class = "card-body">
             <ul class = "list-group">
               <li class = "list-group-item" v-for="domain in domains" v-bind:key="domain">
-                  {{domain}}
+                  {{ domain }}
               </li>
             </ul>
           </div>
@@ -60,20 +69,19 @@
 </template>
 
 <script>
-import "bootstrap/dist/css/bootstrap.css"
-import "font-awesome/css/font-awesome.css"
+import "bootstrap/dist/css/bootstrap.css";
+import "font-awesome/css/font-awesome.css";
 
-export default {
-  name: 'App',
-  data: function() {
+export default { 
+  name: "App", 
+  data: function() { 
     return {
-      prefixes: ['Air', 'Jet', 'Flight'],
-      sufixes: ['Hub', 'Station', 'Mart'],
-      domains: ['Airhub', 'AirStation', 'AirMart', 'JetHub', 'JetStation', 'JetMart', 'FlightHub', 'FlightStation', 'FlightMart' ]
-    };
-  }
-
-  }
+      prefixes: ["Air", "Jet", "Flight"], 
+      sufixes: ["Hub", "Station", "Mart"],
+      domains: ["Airhub", "AirStation", "AirMart", "JetHub", "JetStation", "JetMart", "FlightHub", "FlightStation", "FlightMart" ]
+      };
+    }
+};
 
 </script>
 <style>
@@ -86,6 +94,4 @@ export default {
     background-color: #F1F1F1;
     padding-top: 30px;
   }
-
-
 </style>
